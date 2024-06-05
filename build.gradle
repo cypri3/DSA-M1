@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+}
+
+group 'com.projetdsa'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = '17'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+}
+
+test {
+    useJUnitPlatform()
+    testLogging {
+        exceptionFormat "full"
+        events "started", "skipped", "passed", "failed"
+        showStandardStreams true
+    }
+}
+
+task run(type: JavaExec) {
+    mainClass = 'com.projetdsa.Main'
+    classpath = sourceSets.main.runtimeClasspath
+}
