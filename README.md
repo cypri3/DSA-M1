@@ -14,8 +14,8 @@ This project involves the comprehensive implementation of the Digital Signature 
 
 1. [Introduction](#introduction)
 2. [Installation and Setup](#installation-and-setup)
-   - [Using Gradle](#using-gradle)
    - [Using Java Directly](#using-java-directly)
+   - [Using Gradle](#using-gradle)
 3. [Usage Guide](#usage-guide)
    - [Running the Program](#running-the-program)
 4. [Test Program](#test-program)
@@ -28,6 +28,8 @@ This project involves the comprehensive implementation of the Digital Signature 
 6. [Conclusion](#conclusion)
    - [Summary](#summary)
    - [Future Improvements](#future-improvements)
+7. [FAQ](#faq)
+   - [Common Errors and Solutions](#common-errors-and-solutions)
 
 ## Introduction
 
@@ -40,56 +42,6 @@ This project aims to develop a implementation of the Digital Signature Algorithm
 Developed in an academic setting, this DSA project serves learning and research purposes. While rigorous, it may contain imperfections or bugs due to its experimental nature, such as the use of an extremely simple hash function.
 
 ## Installation and Setup
-
-### Using Gradle
-
-To use the DSA project, Gradle is required. Follow these steps for installation:
-
-#### Downloading and Installing Gradle on Linux
-
-Download the specified version of Gradle:
-```sh
-wget https://github.com/gradle/gradle-distributions/releases/download/v8.0.2/gradle-8.0.2-bin.zip
-sudo unzip gradle-8.0.2-bin.zip -d /opt/gradle
-export PATH=/opt/gradle/gradle-8.0.2/bin:$PATH
-source ~/.bashrc
-```
-
-Verify the installation:
-```sh
-gradle -v
-```
-
-#### Building the Project
-
-Clean the project and build:
-```sh
-./gradlew clean
-rm -rf ~/.gradle/caches/
-./gradlew build
-```
-
-#### Main Commands
-
-- Run the project:
-  ```sh
-  ./gradlew run
-  ```
-- Test the project:
-  ```sh
-  ./gradlew test
-  ```
-- Build the project:
-  ```sh
-  ./gradlew build
-  ```
-- Clean the project:
-  ```sh
-  ./gradlew clean
-  ```
-
-NB : The test program verifies the correctness of the DSA implementation. It includes tests for key generation, message signing, and signature verification under various scenarios, including special characters and messages of different lengths.
-
 
 ### Verifying Java installation
 
@@ -125,19 +77,68 @@ echo $JAVA_HOME
 java -version
 ```
 
+### Using Gradle
+
+To use the DSA project, Gradle is required. Follow these steps for installation:
+
+#### Downloading and Installing Gradle on Linux
+
+Download the specified version of Gradle:
+```sh
+wget https://github.com/gradle/gradle-distributions/releases/download/v8.0.2/gradle-8.0.2-bin.zip
+sudo unzip gradle-8.0.2-bin.zip -d /opt/gradle
+export PATH=/opt/gradle/gradle-8.0.2/bin:$PATH
+source ~/.bashrc
+```
+
+Verify the installation:
+```sh
+gradle -v
+```
+
+#### Generating the Gradle Wrapper
+
+If the Gradle wrapper files are missing or you encounter issues, regenerate them using the following command:
+
+```sh
+gradle wrapper
+```
+
 #### Verify `gradle.properties` Configuration
 
 Ensure the `gradle.properties` file is configured correctly:
 ```sh
 echo 'org.gradle.java.home=/usr/lib/jvm/java-17-openjdk-amd64' > gradle.properties
+rm -rf ~/.gradle/caches/
 ```
 
-#### Recompile the Project
+#### Building the Project
 
 Clean and build the project:
 ```sh
 ./gradlew clean build
 ```
+
+#### Main Commands
+
+- Run the project:
+  ```sh
+  ./gradlew run
+  ```
+- Test the project:
+  ```sh
+  ./gradlew test
+  ```
+- Build the project:
+  ```sh
+  ./gradlew build
+  ```
+- Clean the project:
+  ```sh
+  ./gradlew clean
+  ```
+
+NB : The test program verifies the correctness of the DSA implementation. It includes tests for key generation, message signing, and signature verification under various scenarios, including special characters and messages of different lengths.
 
 ## Usage Guide
 
@@ -215,3 +216,49 @@ The project successfully implemented DSA in an academic context, emphasizing a c
 ### Future Improvements
 
 Potential enhancements include optimizing further for performance, improving the user interface, and conducting extensive security audits to ensure robustness and security in various use cases.
+
+## FAQ
+
+### Common Errors and Solutions
+
+#### Error: `./gradlew: /bin/sh^M: bad interpreter: No such file or directory`
+
+This error occurs due to incorrect line endings in the `gradlew` script. To fix this, follow these steps:
+
+1. Install `dos2unix`:
+   ```sh
+   sudo apt-get install dos2unix
+   ```
+
+2. Convert the `gradlew` file:
+   ```sh
+   dos2unix gradlew
+   ```
+
+3. Make the file executable:
+   ```sh
+   chmod +x gradlew
+   ```
+
+4. Run the script:
+   ```sh
+   ./gradlew run
+   ```
+
+These steps should resolve the `bad interpreter` issue and allow you to run Gradle correctly.
+
+#### Error: `sudo: unzip: command not found`
+
+This error occurs if the `unzip` utility is not installed on your system. To install it, run:
+```sh
+sudo apt-get install unzip
+```
+
+#### Error: `Error: Could not find or load main class org.gradle.wrapper.GradleWrapperMain`
+
+This error can occur if the Gradle wrapper files are missing. To fix this, regenerate the wrapper files:
+```sh
+gradle wrapper
+```
+
+By following these steps, you should be able to resolve common issues encountered during the setup and execution of the DSA project.
