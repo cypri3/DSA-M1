@@ -28,4 +28,5 @@ test {
 task run(type: JavaExec) {
     mainClass = 'com.projetdsa.Main'
     classpath = sourceSets.main.runtimeClasspath
+    args = ["alice.txt"]
 }
