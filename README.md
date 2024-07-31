@@ -8,7 +8,7 @@
 
 ## DSA Implementation Project for Cryptography Course
 
-This project involves the comprehensive implementation of the Digital Signature Algorithm (DSA) in Java. Guided by course material and standard documentation, the project begins with a thorough understanding of the DSA standard, developing functional signing and verification algorithms. Subsequent stages expand functionality to support various testing scenarios and performance evaluations, with a focus on clear documentation, code readability, and addressing encountered challenges. The accompanying report includes user instructions, testing scripts, implementation insights, and solutions to overcome hurdles faced during development.
+This project involves the comprehensive implementation of the Digital Signature Algorithm (DSA) in Java. Guided by course material and standard documentation, the project begins with a thorough understanding of the DSA standard, developing functional signing and verification algorithms. Subsequent stages expand functionality to support various testing scenarios and performance evaluations, with a focus on clear documentation and code readability. The accompanying report includes user instructions, testing scripts and implementation insights.
 
 ## Table of Contents
 
@@ -33,17 +33,17 @@ This project involves the comprehensive implementation of the Digital Signature 
 
 ### Project Overview
 
-This project aims to develop a robust and optimized implementation of the Digital Signature Algorithm (DSA), widely used for digital signatures. The primary goal is to provide a high-performance version of DSA supporting signing and verification of messages efficiently and securely. Special focus is given to optimizing the signing and verification processes for performance evaluation.
+This project aims to develop a implementation of the Digital Signature Algorithm (DSA), widely used for digital signatures. The primary goal is to provide a high-performance version of DSA supporting signing and verification of messages efficiently and "securely". Special focus is given to optimizing the signing and verification processes for performance evaluation.
 
 ### Context
 
-Developed in an academic setting, this DSA project serves learning and research purposes. While rigorous, it may contain imperfections or bugs due to its experimental nature. The development was a collaborative effort, enhancing our understanding and skills in version control systems like Git, which was essential for coordinating work, tracking changes, and maintaining project organization.
+Developed in an academic setting, this DSA project serves learning and research purposes. While rigorous, it may contain imperfections or bugs due to its experimental nature, such as the use of an extremely simple hash function.
 
 ## Installation and Setup
 
 ### Using Gradle
 
-To use the DSA project with Gradle, follow these steps:
+To use the DSA project, Gradle is required. Follow these steps for installation:
 
 #### Downloading and Installing Gradle on Linux
 
