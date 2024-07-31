@@ -70,6 +70,7 @@ public class Main {
         }
 
         // Given DSA parameters
+            
         BigInteger q = new BigInteger("2").pow(160).add(new BigInteger("7"));
         BigInteger p = new BigInteger("1").add(q.multiply(new BigInteger("2").pow(864).add(new BigInteger("218"))));
         BigInteger g = new BigInteger("2").modPow(p.subtract(BigInteger.ONE).divide(q), p);
@@ -79,15 +80,17 @@ public class Main {
 
         // Create an ExecutorService
         ExecutorService executor = Executors.newFixedThreadPool(NUM_THREADS);
-
+   
         // Parallelize signing
         List<Callable<BigInteger[]>> signingTasks = new ArrayList<>();
         for (int i = 0; i < 10000; i++) {
+            
             signingTasks.add(() -> signMessage(message, keyPair.privateKey, p, q, g));
         }
 
         long startSign = System.nanoTime();
         try {
+                
             List<Future<BigInteger[]>> signingResults = executor.invokeAll(signingTasks);
             for (Future<BigInteger[]> future : signingResults) {
                 future.get(); // Don't actually need the result here, just to ensure all tasks are done

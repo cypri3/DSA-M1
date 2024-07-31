@@ -62,5 +62,12 @@ node_modules/
 # Ignore temporary files
 tmp/
 *.tmp
+
+#Ignore others files
 signature.txt
+gradlew.bat
 gradlew
+gradle/
+.github/
+.gradle/
+.vscode/
