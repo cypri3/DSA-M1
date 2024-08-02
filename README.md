@@ -195,17 +195,29 @@ The project features a clear and modular code structure:
 
 ### Main Functions
 
-- **DSA Key Pair Generation**
-- **DSA Signing**
-- **DSA Verification**
-- **Hashing Function**
+- **DSA Key Pair Generation**: `generateKeyPair`
+- **DSA Signing**: `signMessage`
+- **DSA Verification**: `verifySignature`
+- **Hashing Function**: `hash` - This function converts the message to a BigInteger and then takes the modulo \(2^{160}\) to produce a 160-bit hash.
 
 ### Implementation Particularities
 
-- **Use of Structures**: Enhances code readability and maintenance by organizing data into structures.
-- **Multithreading**: Implemented at a high level to handle multiple signing and verification operations in parallel.
-- **Code Readability and Documentation**: Emphasis on clear, readable code with comprehensive documentation.
-- **Variety of Options**: Offers extensive configuration options to control various execution aspects.
+#### Algorithms Used
+
+- **Digital Signature Algorithm (DSA)**: The primary cryptographic algorithm used for signing and verification. DSA involves key pair generation, message signing, and signature verification.
+- **Simplified Hash Function**: A simple modulo operation to extract the first 160 bits of the message as the hash, as suggested by the project guidelines. While not secure, it simplifies the implementation.
+
+#### Implementation Choices
+
+1. **BigInteger Library**: The Java `BigInteger` class is used for handling large integers and multiprecision arithmetic, crucial for cryptographic operations.
+2. **SecureRandom**: Utilized for generating random values securely, essential for generating private keys and random values during signing.
+3. **Parallelization**: Implemented using Java’s `ExecutorService` to perform signing and verification operations in parallel, leveraging multi-core processors to improve performance.
+
+#### Key Design Decisions
+
+- **Code Modularity**: The implementation is broken down into small, focused methods to enhance readability and maintainability.
+- **Simplified Hash Function**: A simple hash function is used to focus on the DSA implementation itself, while acknowledging its limitations in security.
+- **Multithreading**: To handle high loads efficiently, signing and verification are parallelized, making the implementation scalable and suitable for performance testing.
 
 ## Conclusion
 
@@ -258,7 +270,9 @@ sudo apt-get install unzip
 
 This error can occur if the Gradle wrapper files are missing. To fix this, regenerate the wrapper files:
 ```sh
-gradle wrapper
+grad
+
+le wrapper
 ```
 
-By following these steps, you should be able to resolve common issues encountered during the setup and execution of the DSA project.
+Ensure that the `gradle-wrapper.jar` file is present in the `gradle/wrapper/` directory before running the build command.
