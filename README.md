@@ -270,9 +270,7 @@ sudo apt-get install unzip
 
 This error can occur if the Gradle wrapper files are missing. To fix this, regenerate the wrapper files:
 ```sh
-grad
-
-le wrapper
+gradle wrapper
 ```
 
 Ensure that the `gradle-wrapper.jar` file is present in the `gradle/wrapper/` directory before running the build command.
