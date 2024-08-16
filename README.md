@@ -213,12 +213,6 @@ The project features a clear and modular code structure:
 2. **SecureRandom**: Utilized for generating random values securely, essential for generating private keys and random values during signing.
 3. **Parallelization**: Implemented using Java’s `ExecutorService` to perform signing and verification operations in parallel, leveraging multi-core processors to improve performance.
 
-#### Key Design Decisions
-
-- **Code Modularity**: The implementation is broken down into small, focused methods to enhance readability and maintainability.
-- **Simplified Hash Function**: A simple hash function is used to focus on the DSA implementation itself, while acknowledging its limitations in security.
-- **Multithreading**: To handle high loads efficiently, signing and verification are parallelized, making the implementation scalable and suitable for performance testing.
-
 ## Conclusion
 
 ### Summary
