@@ -217,11 +217,7 @@ The project features a clear and modular code structure:
 
 ### Summary
 
-The project successfully implemented DSA in an academic context, emphasizing a clear and modular code structure, performance optimization, and adaptability to various testing environments. Well-defined data structures and comprehensive documentation facilitate understanding and future extensions.
-
-### Future Improvements
-
-Potential enhancements include optimizing further for performance, improving the user interface, and conducting extensive security audits to ensure robustness and security in various use cases.
+The project successfully implemented DSA in an academic context, emphasizing a clear and modular code structure, performance optimization, and adaptability to various testing environments. Well-defined data structures and comprehensive documentation facilitate understanding and potential future extensions.
 
 ## FAQ
 
