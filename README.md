@@ -8,7 +8,7 @@
 
 ## DSA Implementation Project for Cryptography Course
 
-This project involves the comprehensive implementation of the Digital Signature Algorithm (DSA) in Java. Guided by course material and standard documentation, the project begins with a thorough understanding of the DSA standard, developing functional signing and verification algorithms. Subsequent stages expand functionality to support various testing scenarios and performance evaluations, with a focus on clear documentation and code readability. The accompanying report includes user instructions, testing scripts and implementation insights.
+This project involves the comprehensive implementation of the Digital Signature Algorithm (DSA) in Java, adhering to the FIPS 186-3 standard.. Guided by course material and standard documentation, the project begins with a thorough understanding of the DSA standard, developing functional signing and verification algorithms. Subsequent stages expand functionality to support various testing scenarios and performance evaluations, with a focus on clear documentation and code readability. The accompanying report includes user instructions, testing scripts and implementation insights.
 
 ## Table of Contents
 
