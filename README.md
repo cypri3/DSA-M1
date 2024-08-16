@@ -43,100 +43,117 @@ Developed in an academic setting, this DSA project serves learning and research 
 
 ## Installation and Setup
 
-### Verifying Java installation
+### Step 1: Download the Project
 
-To check and configure Java installation, proceed as follows:
-
-#### Verify Java Version
-
-Check if Java is installed:
-```sh
-java -version
-```
-
-#### Install JDK 17 if Necessary (Ubuntu/Debian)
-
-Install the required JDK version:
-```sh
-sudo apt update
-sudo apt install openjdk-17-jdk
-```
-
-#### Configure JAVA_HOME
-
-Set up the JAVA_HOME environment variable:
-```sh
-echo 'export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64' >> ~/.bashrc
-echo 'export PATH=$JAVA_HOME/bin:$PATH' >> ~/.bashrc
-source ~/.bashrc
-```
-
-Verify the setup:
-```sh
-echo $JAVA_HOME
-java -version
-```
-
-### Using Gradle
-
-To use the DSA project, Gradle is required. Follow these steps for installation:
-
-#### Downloading and Installing Gradle on Linux
-
-Download the specified version of Gradle:
-```sh
-wget https://github.com/gradle/gradle-distributions/releases/download/v8.0.2/gradle-8.0.2-bin.zip
-sudo unzip gradle-8.0.2-bin.zip -d /opt/gradle
-export PATH=/opt/gradle/gradle-8.0.2/bin:$PATH
-source ~/.bashrc
-```
-
-Verify the installation:
-```sh
-gradle -v
-```
-
-#### Generating the Gradle Wrapper
-
-If the Gradle wrapper files are missing or you encounter issues, regenerate them using the following command:
+First, download the DSA project from the GitHub repository. You can clone the repository using the following command:
 
 ```sh
-gradle wrapper
+git clone https://github.com/cypri3/DSA-M1.git
 ```
 
-#### Verify `gradle.properties` Configuration
+Navigate to the project directory:
 
-Ensure the `gradle.properties` file is configured correctly:
 ```sh
-echo 'org.gradle.java.home=/usr/lib/jvm/java-17-openjdk-amd64' > gradle.properties
-rm -rf ~/.gradle/caches/
+cd DSA-M1
 ```
 
-#### Building the Project
+### Step 2: Set Up the Environment
 
-Clean and build the project:
+Once the project is downloaded, follow the steps below to set up the Java environment and Gradle build system.
+
+#### Verifying Java Installation
+
+1. **Verify Java Version**: Check if Java is installed and ensure it's the correct version:
+
+    ```sh
+    java -version
+    ```
+
+2. **Install JDK 17 if Necessary**:
+
+    On Ubuntu/Debian, you can install JDK 17 with:
+
+    ```sh
+    sudo apt update
+    sudo apt install openjdk-17-jdk
+    ```
+
+3. **Configure JAVA_HOME**: Set the `JAVA_HOME` environment variable:
+
+    ```sh
+    echo 'export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64' >> ~/.bashrc
+    echo 'export PATH=$JAVA_HOME/bin:$PATH' >> ~/.bashrc
+    source ~/.bashrc
+    ```
+
+    Verify the setup:
+
+    ```sh
+    echo $JAVA_HOME
+    java -version
+    ```
+
+### Step 3: Using Gradle
+
+Gradle is used to build and run the project. Follow these steps:
+
+#### Install Gradle
+
+1. **Download and Install Gradle**:
+
+    ```sh
+    wget https://github.com/gradle/gradle-distributions/releases/download/v8.0.2/gradle-8.0.2-bin.zip
+    sudo unzip gradle-8.0.2-bin.zip -d /opt/gradle
+    export PATH=/opt/gradle/gradle-8.0.2/bin:$PATH
+    source ~/.bashrc
+    ```
+
+    Verify the installation:
+
+    ```sh
+    gradle -v
+    ```
+
+2. **Generate the Gradle Wrapper**: If needed, regenerate the wrapper files:
+
+    ```sh
+    gradle wrapper
+    ```
+
+3. **Verify `gradle.properties` Configuration**: Ensure the Gradle properties are set up:
+
+    ```sh
+    echo 'org.gradle.java.home=/usr/lib/jvm/java-17-openjdk-amd64' > gradle.properties
+    rm -rf ~/.gradle/caches/
+    ```
+
+### Step 4: Building the Project
+
+Once everything is set up, clean and build the project using Gradle:
+
 ```sh
 ./gradlew clean build
 ```
 
-#### Main Commands
+Now, you can run, test, or clean the project using the corresponding Gradle commands:
 
-- Run the project:
-  ```sh
-  ./gradlew run
-  ```
-- Test the project:
-  ```sh
-  ./gradlew test
-  ```
-- Build the project:
-  ```sh
-  ./gradlew build
-  ```
-- Clean the project:
-  ```sh
-  ./gradlew clean
-  ```
+- **Run the project**:
+
+    ```sh
+    ./gradlew run
+    ```
+
+- **Test the project**:
+
+    ```sh
+    ./gradlew test
+    ```
+
+- **Clean the project**:
+
+    ```sh
+    ./gradlew clean
+    ```
 
 NB : The test program verifies the correctness of the DSA implementation. It includes tests for key generation, message signing, and signature verification under various scenarios, including special characters and messages of different lengths.
 
