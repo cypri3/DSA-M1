@@ -4,7 +4,7 @@
 
 ---
 
-# DSA Implementation Project
+# DSA-M1
 
 ## DSA Implementation Project for Cryptography Course
 
